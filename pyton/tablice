@@ -1,0 +1,27 @@
+def main():
+    liczby = []
+
+    print("Podaj 10 liczb (zatwierdzaj kazda Enterem):")
+
+    for i in range(10):
+        liczba = int(input(f"Podaj liczbe {i + 1}: "))
+        liczby.append(liczba)
+
+    suma_liczb = sum(liczby)
+    maksimum = max(liczby)
+    minimum = min(liczby)
+    srednia = suma_liczb / 10.0
+
+    print("\nWprowadzone liczby z tablicy: ", end="")
+    for liczba in liczby:
+        print(f"{liczba} ", end="")
+
+    print("\n\n--- STATYSTYKI ---")
+    print(f"Suma: {suma_liczb}")
+    print(f"Wartosc maksymalna: {maksimum}")
+    print(f"Wartosc minimalna: {minimum}")
+    print(f"Srednia: {srednia:.2f}")
+
+
+if __name__ == "__main__":
+    main()
