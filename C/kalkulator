@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main() {
+    char operacja;
+    char decyzja;
+    double liczba1, liczba2, wynik;
+
+    do {
+        printf("\n=== PROSTY KALKULATOR ===\n");
+        printf("Wybierz operacje (+, -, *, /): ");
+        scanf(" %c", &operacja);
+
+        printf("Podaj pierwsza liczbe: ");
+        scanf("%lf", &liczba1);
+
+        printf("Podaj druga liczbe: ");
+        scanf("%lf", &liczba2);
+
+        switch (operacja) {
+            case '+':
+                wynik = liczba1 + liczba2;
+                printf("Wynik: %.2lf + %.2lf = %.2lf\n", liczba1, liczba2, wynik);
+                break;
+
+            case '-':
+                wynik = liczba1 - liczba2;
+                printf("Wynik: %.2lf - %.2lf = %.2lf\n", liczba1, liczba2, wynik);
+                break;
+
+            case '*':
+                wynik = liczba1 * liczba2;
+                printf("Wynik: %.2lf * %.2lf = %.2lf\n", liczba1, liczba2, wynik);
+                break;
+
+            case '/':
+                if (liczba2 == 0) {
+                    printf("Nie mozna dzielic przez zero\n");
+                } else {
+                    wynik = liczba1 / liczba2;
+                    printf("Wynik: %.2lf / %.2lf = %.2lf\n", liczba1, liczba2, wynik);
+                }
+                break;
+
+            default:
+                printf("Blad: Nieznana operacja!\n");
+                break;
+        }
+
+        printf("\nCzy chcesz rozpoczac kolejna operacje? (t/n): ");
+        scanf(" %c", &decyzja);
+
+    } while (decyzja == 't' || decyzja == 'T');
+
+    printf("Dziękujemy za skorzystanie z aplikacji\n");
+    return 0;
+}
