@@ -1,0 +1,41 @@
+def main():
+    while True:
+        print("\n=== PROSTY KALKULATOR ===")
+        operacja = input("Wybierz operacje (+, -, *, /): ")
+
+        liczba1 = float(input("Podaj pierwsza liczbe: "))
+        liczba2 = float(input("Podaj druga liczbe: "))
+
+        match operacja:
+            case '+':
+                wynik = liczba1 + liczba2
+                print(f"Wynik: {liczba1:.2f} + {liczba2:.2f} = {wynik:.2f}")
+
+            case '-':
+                wynik = liczba1 - liczba2
+                print(f"Wynik: {liczba1:.2f} - {liczba2:.2f} = {wynik:.2f}")
+
+            case '*':
+                wynik = liczba1 * liczba2
+                print(f"Wynik: {liczba1:.2f} * {liczba2:.2f} = {wynik:.2f}")
+
+            case '/':
+                if liczba2 == 0:
+                    print("Nie mozna dzielic przez zero")
+                else:
+                    wynik = liczba1 / liczba2
+                    print(f"Wynik: {liczba1:.2f} / {liczba2:.2f} = {wynik:.2f}")
+
+            case _:
+                print("Blad: Nieznana operacja!")
+
+        decyzja = input("\nCzy chcesz rozpoczac kolejna operacje? (t/n): ")
+
+        if decyzja.lower() != 't':
+            break
+
+    print("Dziękujemy za skorzystanie z aplikacji")
+
+
+if __name__ == "__main__":
+    main()
