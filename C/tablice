@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int liczby[10];
+    int suma_liczb = 0;
+    int max, min;
+    float srednia = 0.0;
+
+    printf("Podaj 10 liczb (zatwierdzaj kazda Enterem):\n");
+
+    for (int i = 0; i < 10; i++) {
+        printf("Podaj liczbe %d: ", i + 1);
+        scanf("%d", &liczby[i]);
+        suma_liczb += liczby[i];
+    }
+
+    min = liczby[0];
+    max = liczby[0];
+
+    for (int i = 1; i < 10; i++) {
+        if (liczby[i] > max) {
+            max = liczby[i];
+        }
+        if (liczby[i] < min) {
+            min = liczby[i];
+        }
+    }
+
+    srednia = (float)suma_liczb / 10.0;
+
+    printf("\nWprowadzone liczby z tablicy: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", liczby[i]);
+    }
+
+    printf("\n\n--- STATYSTYKI ---");
+    printf("\nSuma: %d", suma_liczb);
+    printf("\nWartosc maksymalna: %d", max);
+    printf("\nWartosc minimalna: %d", min);
+    printf("\nSrednia: %.2f\n", srednia);
+
+    return 0;
+}
