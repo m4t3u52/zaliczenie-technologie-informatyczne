@@ -1,0 +1,26 @@
+def toLower(text_list):
+    i = 0
+    while i < len(text_list):
+        if 'A' <= text_list[i] <= 'Z':
+            text_list[i] = chr(ord(text_list[i]) + 32)
+        i += 1
+
+
+def textSize(text_list):
+    size = 0
+    for _ in text_list:
+        size += 1
+    return size
+
+
+def main():
+    text1 = "Ala ma kota."
+    print(text1)
+
+    text1_chars = list(text1)
+    toLower(text1_chars)
+
+    print("".join(text1_chars))
+    print(f"Rozmiar: {textSize(text1_chars)}")
+
+    print("-------------------")
