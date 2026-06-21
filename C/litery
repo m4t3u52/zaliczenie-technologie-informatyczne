@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+void toLower(char text[]) {
+    int i = 0;
+    while (text[i]) {
+        if ('A' <= text[i] && text[i] <= 'Z') {
+            text[i] += ('a' - 'A');
+        }
+        i++;
+    }
+}
+
+int textSize(char *text) {
+    int size = 0;
+    while (*text) {
+        size++;
+        text++;
+    }
+    return size;
+}
+
+void removeNewline(char text[]) {
+    int i = 0;
+    while (text[i]) {
+        if (text[i] == '\n') {
+            text[i] = '\0';
+            break;
+        }
+        i++;
+    }
+}
+
+int main() {
+    char text1[] = "Ala ma kota.";
+    printf("%s\n", text1);
+    toLower(text1);
+    printf("%s\n", text1);
+    printf("Rozmiar: %d\n", textSize(text1));
+
+    printf("-------------------\n");
+
+
+    char text2[100];
+    printf("Podaj zdanie: ");
+    fgets(text2, 100, stdin);
+    removeNewline(text2);
+
+    printf("%s\n", text2);
+    toLower(text2);
+    printf("%s\n", text2);
+    printf("Rozmiar: %d\n", textSize(text2));
+
+    return 0;
+}
